@@ -1,0 +1,86 @@
+{
+  "handGame": {
+
+    "default": {
+
+      "rock": [
+        {
+          "beats": "scissors",
+          "how": "crushes"
+        }
+      ],
+
+      "paper": [
+        {
+          "beats": "rock",
+          "how": "covers"
+        }
+      ],
+
+      "scissors": [
+        {
+          "beats": "paper",
+          "how": "cuts"
+        }
+      ]
+    },
+
+    "variation": {
+
+      "rock": [
+        {
+          "beats": "scissors",
+          "how": "crushes"
+        },
+        {
+          "beats": "lizard",
+          "how": "crushes"
+        }
+      ],
+
+      "paper": [
+        {
+          "beats": "rock",
+          "how": "covers"
+        },
+        {
+          "beats": "spock",
+          "how": "disproves"
+        }
+      ],
+
+      "scissors": [
+        {
+          "beats": "paper",
+          "how": "cuts"
+        },
+        {
+          "beats": "lizard",
+          "how": "decapitates"
+        }
+      ],
+
+      "lizard": [
+        {
+          "beats": "spock",
+          "how": "poisons"
+        },
+        {
+          "beats": "paper",
+          "how": "eats"
+        }
+      ],
+
+      "spock": [
+        {
+          "beats": "scissors",
+          "how": "smashes"
+        },
+        {
+          "beats": "rock",
+          "how": "vaporizes"
+        }
+      ]
+    }
+  }
+}
