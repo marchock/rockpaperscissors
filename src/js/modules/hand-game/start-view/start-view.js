@@ -1,6 +1,4 @@
 import html from './start-view.html';
-import './start-view.scss';
-
 import { settings } from '../hand-game-settings';
 
 class StartView {
@@ -27,8 +25,6 @@ class StartView {
           checked.push(input)
         }
       });
-
-      console.log('checked', checked);
 
       this.updateSettings(checked);
     })
