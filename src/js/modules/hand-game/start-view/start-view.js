@@ -9,8 +9,8 @@ class StartView {
     this.settings = settings;
   }
 
-  loadView(instance) {
-    this._handGame = instance;
+  loadView(ref) {
+    this._handGame = ref;
 
     this.$ele.innerHTML = this.html;
 
@@ -20,7 +20,7 @@ class StartView {
       let inputs = this.$ele.querySelectorAll('input');
       let checked = [];
 
-      inputs.forEach((input) => {
+      Array.from(inputs).forEach(function (input) {
         if (input.checked) {
           checked.push(input)
         }
