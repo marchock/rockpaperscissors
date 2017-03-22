@@ -49,5 +49,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "license": "UNLICENSED",
-  "dependencies": {}
+  "dependencies": {
+    "html-loader": "^0.4.5"
+  }
 }
