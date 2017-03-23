@@ -17,6 +17,7 @@ describe('Game StartView', () => {
     it('should be an object', () => {
       setTimeout(() => {
         expect(startView.html).to.be.an('object');
+        run();
       }, 100);
     });
   });
@@ -25,6 +26,7 @@ describe('Game StartView', () => {
     it('should be an object', () => {
       setTimeout(() => {
         expect(startView.$ele).to.be.an('object');
+        run();
       }, 100);
     });
   });
@@ -33,6 +35,7 @@ describe('Game StartView', () => {
     it('should be an object', () => {
       setTimeout(() => {
         expect(startView.settings).to.be.an('object');
+        run();
       }, 100);
     });
   });

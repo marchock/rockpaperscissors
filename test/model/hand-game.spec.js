@@ -1,6 +1,6 @@
 import HandGameData from '../../src/model/hand-game.json';
 
-describe('Hand Game Data', () => {
+describe('Hand Game JSON', () => {
 
   const handGame = HandGameData.handGame;
 
