@@ -9,81 +9,66 @@
 // Installing pollyfill to support ie9 and ie10
 // https://babeljs.io/docs/usage/polyfill/
 
-
 let game_type = new WeakMap();
 let best_of = new WeakMap();
 let verses = new WeakMap();
 
 
-/* Hand Game Settings
- *
- * keep track of the game settings
- */
+ /* Game Settings
+  * @Class
+  */
 class HandGameSettings {
 
   constructor() {
 
-    /* @Private game_type: set property to 'default'
-     * @Param: Object
-     * @Param: String
-     *
-     * Set which game to play "default" or "variation"
+    /* Set a game type to "default" or "variation"
+     * @param {object} this
+     * @param {string} 'default'
      */
     game_type.set(this, 'default');
 
-    /* @Private best_of: set property to 1
-     * @Param: Object
-     * @Param: Number
-     *
-     * Set the number of attempts to win a game 1, 3, 5.
-     */
+     /* Set a number of attempts to win a game 1, 3, 5
+      * @param {object} this
+      * @param {number} 1
+      */
     best_of.set(this, 1);
 
-    /* @Private verses: set property to 'player'
-     * @Param: Object
-     * @Param: String
-     *
-     * Set which opponent the computer should face. "player" or "computer"
-     */
+     /* Set an opponent the computer should face. "player" or "computer"
+      * @param {object} this
+      * @param {string} 'player'
+      */
     verses.set(this, 'player');
   }
 
-  /* getGameType()
-   * @return: String
-   *
-   * return "default" or "variation"
+  /* return a game type "default" or "variation"
+   * @return {string}
    */
   getGameType() {
     return game_type.get(this);
   }
 
-  /* setGameType()
-   * @return: void()
-   *
-   * sets "default" or "variation"
+  /* sets a game type to "default" or "variation"
+   * @param {string} gameType
+   * @return {void}
    */
-  setGameType(string) {
-    if (typeof string === 'string') {
-      game_type.set(this, string);
+  setGameType(gameType) {
+    if (typeof gameType === 'string') {
+      game_type.set(this, gameType);
     } else {
       console.error('setGameType(@param) @param is not a String');
     }
-
   }
 
-  /* getBestOf()
-   * @return: Number
-   *
-   * return 1, 3, or 5
+  /* return a number of attempts to win a game 1, 3 or 5
+   * @return {number}
    */
   getBestOf() {
     return best_of.get(this);
   }
 
-  /* setBestOf()
-   * @return: void()
-   *
-   * sets 1, 3, or 5
+  /* set a number of attempts to win a game 1, 3 or 5
+   * @param {number} number
+   * @return {void}
    */
   setBestOf(number) {
     if (typeof number === 'number') {
@@ -93,23 +78,20 @@ class HandGameSettings {
     }
   }
 
-  /* getVerses()
-   * @return: String
-   *
-   * return "player" or "computer"
+  /* return an opponent the computer should face. "compurter" or "player"
+   * @return {string}
    */
   getVerses() {
     return verses.get(this);
   }
 
-  /* setVerses()
-   * @return: void()
-   *
-   * sets "player" or "computer"
+  /* set an opponent the computer should face. "compurter" or "player"
+   * @param {string} opponent
+   * @return {void}
    */
-  setVerses(string) {
-    if (typeof string === 'string') {
-      verses.set(this, string);
+  setVerses(opponent) {
+    if (typeof opponent === 'string') {
+      verses.set(this, opponent);
     } else {
       console.error('setVerses(@param) @param is not a String');
     }
