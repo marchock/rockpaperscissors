@@ -1,5 +1,4 @@
 require('../css/main.scss');
-
-import print from './module';
-
-print('it works well!');
+import "babel-polyfill";
+import HandGame from './modules/hand-game/hand-game';
+new HandGame();
