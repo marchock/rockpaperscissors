@@ -10,7 +10,7 @@ class StartView {
    * @param: {object} ele
    */
   constructor(ele) {
-    /* A reference where to inject the start-view.html
+    /* A reference to an element
      * @object
      */
     this.$ele = ele;
@@ -36,7 +36,7 @@ class StartView {
      */
     this._handGame = ref;
 
-    /* Injecting HTML into the DOM reference
+    /* Injecting HTML into an element
      * @object
      */
     this.$ele.innerHTML = this.html;

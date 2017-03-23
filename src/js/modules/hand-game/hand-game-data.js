@@ -8,16 +8,16 @@ export const getGameData = () => {
   return HandGameData.handGame[settings.getGameType()];
 }
 
-/* Return an array of string values example: ['rock', 'paper', 'scissors']
+/* Return an array of handSigns example: ['rock', 'paper', 'scissors']
  * @return: array
  */
-export const getOutcomes = () => {
+export const getHandSigns = () => {
   let outcomes = HandGameData.handGame[settings.getGameType()];
-  let outcomesString = [];
+  let handSigns = [];
 
   Object.keys(outcomes).forEach(key => {
-      outcomesString.push(key);
+      handSigns.push(key);
   });
 
-  return outcomesString;
+  return handSigns;
 }

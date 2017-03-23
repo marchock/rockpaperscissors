@@ -1,4 +1,4 @@
-import { getGameData, getOutcomes } from '../../../../src/js/modules/hand-game/hand-game-data';
+import { getGameData, getHandSigns } from '../../../../src/js/modules/hand-game/hand-game-data';
 
 describe('HandGame - Data', () => {
 
@@ -8,9 +8,9 @@ describe('HandGame - Data', () => {
     });
   });
 
-  describe('# getOutcomes()', () => {
+  describe('# getHandSigns()', () => {
     it('should return an array', () => {
-      expect(getOutcomes().length).to.equal(3);
+      expect(getHandSigns().length).to.equal(3);
     });
   });
 });
