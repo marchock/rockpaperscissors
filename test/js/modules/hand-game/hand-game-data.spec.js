@@ -1,14 +1,14 @@
 import { getGameData, getOutcomes } from '../../../../src/js/modules/hand-game/hand-game-data';
 
-describe('Hand Game Data', () => {
+describe('HandGame - Data', () => {
 
-  describe('getGameData()', () => {
+  describe('# getGameData()', () => {
     it('should return an object', () => {
       expect(getGameData()).to.be.an('object');
     });
   });
 
-  describe('getOutcomes()', () => {
+  describe('# getOutcomes()', () => {
     it('should return an array', () => {
       expect(getOutcomes().length).to.equal(3);
     });

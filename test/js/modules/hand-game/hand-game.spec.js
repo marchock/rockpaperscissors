@@ -9,13 +9,13 @@ describe('HandGame', () => {
     expect(HandGame).to.exist;
   });
 
-  describe('this.startView', () => {
+  describe('# this.startView', () => {
     it('should be an instance of StartView()', () => {
       expect(handGame.startView).to.be.an.instanceof(StartView);
     });
   });
 
-  describe('this.gameView', () => {
+  describe('# this.gameView', () => {
     it('should be an instance of GameView()', () => {
       expect(handGame.gameView).to.be.an.instanceof(GameView);
     });

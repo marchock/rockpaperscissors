@@ -1,7 +1,7 @@
 import html from './start-view.html';
 import { settings } from '../hand-game-settings';
 
-/* Loads and start-veiw.html into the DOM
+/* Loads start-veiw.html into the DOM
  * @Class
  */
 class StartView {

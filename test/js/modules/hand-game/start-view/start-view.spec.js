@@ -1,42 +1,19 @@
 import StartView from '../../../../../src/js/modules/hand-game/start-view/start-view';
 
-describe('Game StartView', () => {
-  let $ele = null;
+describe('HandGame - StartView', () => {
   let startView = null;
 
   beforeEach(function() {
-    $ele = document.getElementById('hand-game');
-    startView = new StartView($ele);
+    startView = new StartView({});
   });
 
   it('should exist', () => {
     expect(StartView).to.exist;
 	});
 
-  describe('this.html', () => {
+  describe('# this.settings', () => {
     it('should be an object', () => {
-      setTimeout(() => {
-        expect(startView.html).to.be.an('object');
-        run();
-      }, 100);
-    });
-  });
-
-  describe('this.$ele', () => {
-    it('should be an object', () => {
-      setTimeout(() => {
-        expect(startView.$ele).to.be.an('object');
-        run();
-      }, 100);
-    });
-  });
-
-  describe('this.settings', () => {
-    it('should be an object', () => {
-      setTimeout(() => {
-        expect(startView.settings).to.be.an('object');
-        run();
-      }, 100);
+      expect(startView.settings).to.be.an('object');
     });
   });
 });

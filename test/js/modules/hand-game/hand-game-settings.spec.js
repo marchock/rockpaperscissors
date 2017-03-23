@@ -1,6 +1,6 @@
 import { settings } from '../../../../src/js/modules/hand-game/hand-game-settings';
 
-describe('Hand Game Settings', () => {
+describe('HandGame - Settings', () => {
 
   it('should exist', () => {
     expect(settings).to.exist;

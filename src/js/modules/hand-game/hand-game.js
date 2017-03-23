@@ -12,8 +12,7 @@ class HandGame {
     /* A DOM reference to #hand-game
      * @object
      */
-    this.$ele = document.getElementById('hand-game') ||
-        document.createElement('div');
+    this.$ele = this.getElementHandGame('hand-game');
 
     /* An instance of StartView()
      * @object
@@ -40,6 +39,17 @@ class HandGame {
    */
   loadGameView() {
     this.gameView.loadView(this);
+  }
+
+  getElementHandGame(id) {
+    if (document.getElementById(id)) {
+      return document.getElementById(id);
+    } else {
+      // this is for testing
+      let div = document.createElement('div');
+      div.setAttribute('id', id);
+      return div;
+    }
   }
 }
 
