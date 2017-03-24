@@ -44,7 +44,7 @@ class GameController {
     this.timer();
   }
 
-  /* Returns the amount of points a player must win, to win a game best out of 1, 3 or 5.
+  /* Returns the amount of points a player must win to win a game best out of 1, 3 or 5.
    * @param {number} num
    * @return {number}
    */
@@ -52,14 +52,14 @@ class GameController {
     return Math.round(num / 2);
   }
 
-  /* Identifies which player won or a draw.
+  /* Identifies which player won or if it's a draw.
    * @param {string} p1
    * @param {string} p2
    * @return {void}
    */
   winner(p1, p2) {
 
-    /* Will recieve which player won and how the player won
+    /* Receives which player won and how the player won
      * @object
      */
     let winner = null
@@ -138,7 +138,7 @@ class GameController {
     this._gameView.player2.updateScoreBoard(this.score.p2);
   }
 
-  /* Disables game buttons if player is playing
+  /* Disables game buttons when the itial game count is completed
    * @return {void}
    */
   disableGameButtons() {
@@ -147,7 +147,7 @@ class GameController {
     }
   }
 
-  /* enables game buttons if player is playing
+  /* Enables game buttons if a game is under initial count
    * @return {void}
    */
   enableGameButtons() {
@@ -181,7 +181,7 @@ class GameController {
     }, 1000);
   }
 
-  /* Append child with new value
+  /* Updates H3Element with a new value
    * @param {string}
    * @return {void}
    */

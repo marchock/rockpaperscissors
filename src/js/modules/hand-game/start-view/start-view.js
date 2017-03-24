@@ -1,12 +1,12 @@
 import html from './start-view.html';
 import { settings } from '../hand-game-settings';
 
-/* Loads start-veiw.html into the DOM
+/* Loads start-view.html into the DOM
  * @Class
  */
 class StartView {
 
-  /* Create a start view
+  /* Creates a start view
    * @param: {object} ele
    */
   constructor(ele) {
@@ -15,7 +15,7 @@ class StartView {
      */
     this.$ele = ele;
 
-    /* a copy of start-view.html
+    /* A copy of start-view.html
      * @object
      */
     this.html = html;
@@ -26,7 +26,7 @@ class StartView {
     this.settings = settings;
   }
 
-  /* inject start-view.html into the DOM
+  /* Injects start-view.html into the DOM
    * @param {object} ref
    * @return void
    */
@@ -36,7 +36,7 @@ class StartView {
      */
     this._handGame = ref;
 
-    /* Injecting HTML into an element
+    /* Injects HTML into an element
      * @object
      */
     this.$ele.innerHTML = this.html;
@@ -45,7 +45,7 @@ class StartView {
     this.updateForm();
   }
 
-  /* Get settings and apply to form
+  /* Gets game settings and applies to the start view form
    * @return void
    */
   updateForm() {
@@ -60,7 +60,7 @@ class StartView {
     });
   }
 
-  /* Setup form submit event to update game settings
+  /* Assigns a submit event to a form and updates game settings
    * @return void
    */
   setupFormEvent() {
@@ -84,7 +84,7 @@ class StartView {
     })
   }
 
-  /* Update game settings and then use reference to load game view
+  /* Updates game settings and uses reference to load game view
    * @param {array} checked
    * @return void
    */

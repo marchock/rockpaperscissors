@@ -5,12 +5,12 @@ import Player from './player';
 import GameController from './game-controller';
 import GameButtons from './game-buttons';
 
-/* Loads game-veiw.html into the DOM
+/* Loads game-view.html into the DOM
  * @Class
  */
 class GameView {
 
-  /* Create a game view
+  /* Creates a game view
    * @param: {object} ele - DOMElement
    */
   constructor(ele) {
@@ -25,7 +25,7 @@ class GameView {
     this.html = html;
   }
 
-  /* inject game-view.html into the DOM
+  /* Injects game-view.html into the DOM
    * @param {object} ref
    * @return {void}
    */
@@ -40,31 +40,31 @@ class GameView {
      */
     this.settings = settings;
 
-    /* Injecting HTML into an element
+    /* Injects HTML into an element
      * @object
      */
     this.$ele.innerHTML = this.html;
 
-    /* Creating an instance of Player()
+    /* Creates an instance of Player()
      * @object
      */
     this.player1 = new Player(
       getHandSigns(), 'player1', 'computer', this.$ele, settings
     );
 
-    /* Creating an instance of Player()
+    /* Creates an instance of Player()
      * @object
      */
     this.player2 = new Player(
       getHandSigns(), 'player2', this.settings.getVerses(), this.$ele, settings
     );
 
-    /* Creating an instance of GameButtons()
+    /* Creates an instance of GameButtons()
      * @object
      */
     this.gameButtons = new GameButtons(this.$ele, getHandSigns(), this);
 
-    /* Creating an instance of GameController()
+    /* Creates an instance of GameController()
      * @object
      */
     this.gameController = new GameController(this.$ele, this);
@@ -77,18 +77,18 @@ class GameView {
    * @return {void}
    */
   getHandSignFromPlayers() {
-    /* Get hand sign form player 1
+    /* Gets a hand sign from player 1
      * @string
      */
     let p1 = this.player1.getHandSign();
 
-    /* Get hand sign form player 2
+    /* Gets a hand sign from player 2
      * @string
      */
     let p2 = this.player2.getHandSign();
 
     /* ## GameController()
-     * 
+     *
      */
     this.gameController.winner(p1, p2);
   }
@@ -101,7 +101,7 @@ class GameView {
     this._handGame.loadStartView();
   }
 
-  /* Apply a click event to button to quit game
+  /* Applies a click event to the quit button and ends a game
    * @param {object} ele - DOMElement
    * @return {void}
    */

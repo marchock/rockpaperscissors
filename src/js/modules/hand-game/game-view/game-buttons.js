@@ -1,11 +1,11 @@
 import icons from './icons';
 
-/* Create game buttons
+/* Create game buttons to select hand signs
  * @Class
  */
 class GameButtons {
 
-  /* Create a game buttons
+  /* Create GameButtons
    * @param: {object} ele - DOMElement
    * @param: {array} handSigns
    * @param: {object} ref
@@ -17,7 +17,7 @@ class GameButtons {
      */
     this._gameView = ref;
 
-    /* A reference to an element
+    /* A reference to game-buttons element
      * @object
      */
     this.$container = ele.querySelector('.game-buttons');
@@ -36,7 +36,7 @@ class GameButtons {
     this.disable = false;
   }
 
-  /* this method is called by an event click attached to game buttons
+  /* This method is registered to the game buttons event click
    * @param {string} handSign
    * @return {void}
    */
@@ -45,7 +45,7 @@ class GameButtons {
     this._gameView.player2.saveHandSign(handSign);
   }
 
-  /* Create game button for each hand sign in the array
+  /* Create a game button for each hand sign in the array
    * @param {array} handSigns
    * @return {void}
    */
@@ -57,8 +57,8 @@ class GameButtons {
     });
   }
 
-  /* - If "computer" is selected as an opponent buttons are loocked.
-   * - Buttons are locked to a player when a game is not in progress.
+  /* - If "computer" is selected as an opponent, buttons are locked.
+   * - Buttons are locked to a player when a game is under initial count.
    * @return {void}
    */
   lockButtons() {
@@ -66,7 +66,7 @@ class GameButtons {
     this.$container.setAttribute('class', 'game-buttons lock');
   }
 
-  /* Unlock buttons when a game is in progress.
+  /* Unlock buttons when a game is under intial count.
    * @return {void}
    */
   unlockButtons() {
@@ -74,7 +74,7 @@ class GameButtons {
     this.$container.setAttribute('class', 'game-buttons');
   }
 
-  /* Create a button and add a click event if a player is selected
+  /* Creates a button element and registers a click event
    * @return {object}
    */
   createButton(string, index) {

@@ -6,10 +6,10 @@ import GameView from './game-view/game-view';
  */
 class HandGame {
 
-  /* Create a hand game
+  /* Creates a HandGame
    */
   constructor() {
-    /* A reference to an hand-game element
+    /* A reference to a hand-game element
      * @object
      */
     this.$ele = this.getElementHandGame('hand-game');
@@ -27,21 +27,21 @@ class HandGame {
     this.loadStartView();
   }
 
-  /* Inject start view into the DOM
+  /* Injects start view into the DOM
    * @return {void}
    */
   loadStartView() {
     this.startView.loadView(this);
   }
 
-  /* Inject game view into the DOM
+  /* Injects game view into the DOM
    * @return {void}
    */
   loadGameView() {
     this.gameView.loadView(this);
   }
 
-  /* Return a DOM element
+  /* Returns a DIV element with an ID "hand-game"
    * @param {string} id
    * @return {object}
    */

@@ -4,7 +4,7 @@ import icons from './icons';
   * @Class
   */
 class Player {
-  /* Create a player
+  /* Creates a player
    * @param: {array} outcomes - specified outcomes [rock, paper, scissors]
    * @param: {string} player
    * @param: {string} playerType
@@ -52,7 +52,7 @@ class Player {
     this.createScoreBoard(Math.round(settings.getBestOf() / 2))
   }
 
-  /* update element with player name
+  /* Updates element with player name
    * @param {string}
    * @return {void}
    */
@@ -60,7 +60,7 @@ class Player {
     this.$playerName.innerHTML = `<span>${name}</span>`;
   }
 
-  /* Create scoreboard
+  /* Creates scoreboard
    * @param {number} num
    * @return {void}
    */
@@ -73,7 +73,7 @@ class Player {
     }
   }
 
-  /* Update a player's scoreboard
+  /* Updates a player's scoreboard
    * @param {number} num
    * @return {void}
    */
@@ -107,13 +107,14 @@ class Player {
 
     case 'player':
       string = this.savedHandSign;
+      // resets to empty string
       this.savedHandSign = '';
       break;
     }
     return string;
   }
 
-  /* Save an outcome from a player not a computer
+  /* Saves an outcome from a player not a computer
    * @param {string}
    * @return {void}
    */
@@ -122,21 +123,21 @@ class Player {
     this.updateElement(handSign);
   }
 
-  /* Get a random number inbetween 0 to handSigns.length
+  /* Gets a random number in between 0 to handSigns.length
    * @return {number}
    */
   getRandomNumber() {
     return Math.floor((Math.random() * this.handSigns.length));
   }
 
-  /* Remove background image from player element
+  /* Removes background image from player element
    * @return {void}
    */
   removeIcon() {
     this.$ele.style.backgroundImage = '';
   }
 
-  /* Update element with background image
+  /* Updates element with background image
    * @param {string} outcome
    * @return {void}
    */
