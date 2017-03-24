@@ -9,11 +9,16 @@
   text-align: center;
   display: table;
   overflow: auto;
+  -webkit-animation: FADE-IN 1s forwards; /* Safari 4+ */
+  -moz-animation:    FADE-IN 1s forwards; /* Fx 5+ */
+  -o-animation:      FADE-IN 1s forwards; /* Opera 12+ */
+  animation:         FADE-IN 1s forwards; /* IE 10+, Fx 29+ */
 
   h3 {
     background-color: #fff;
     padding: 10px 10px;
     margin: 0;
+    color: #ccc;
 
     @include tablet {
       padding: 30px 10px 20px;
@@ -44,15 +49,18 @@
   &__submit {
     width: 100%;
     background-color: #fff;
-    padding-top: 40px;
+    padding-top: 50px;
 
     button {
-      padding: 10px;
+      padding: 15px;
       width: 30%;
       background-color: #4a4a4a;
       color: #fff;
       border: 0;
       font-size: 20px;
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
       &:hover {
         background-color: #696868;
@@ -112,5 +120,6 @@
   input[type=radio]:checked ~ label {
     background-color: #aac2e0;
     color: black;
+    font-weight: 400;
   }
 }
