@@ -34,6 +34,7 @@
   &__view__verses,
   &__submit {
     display: table;
+    width: 100%;
   }
 
   &__best-of {
@@ -84,7 +85,7 @@
     width: 100%;
 
     &:hover label{
-      color: #FFFFFF;
+      color: #333;
 
       .check {
         border: 5px solid #FFFFFF;
@@ -100,12 +101,16 @@
       display: block;
       position: relative;
       font-weight: 300;
-      font-size: 1.35em;
-      padding: 15px;
+      padding: 18px;
       margin: 0 auto;
       z-index: 9;
       cursor: pointer;
-      -webkit-transition: all 0.25s linear;
+      -webkit-transition: all 0.35s linear;
+      transition: all 0.35s linear;
+
+      @include tablet {
+        @include font(18, 18);
+      }
     }
   }
 

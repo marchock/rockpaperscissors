@@ -57,8 +57,8 @@ class GameButtons {
     });
   }
 
-  /* Lock buttons if computer is an opponent or when a player's time is up to
-   * to select a hand sign.
+  /* - If "computer" is selected as an opponent buttons are loocked.
+   * - Buttons are locked to a player when a game is not in progress.
    * @return {void}
    */
   lockButtons() {
@@ -66,7 +66,7 @@ class GameButtons {
     this.$container.setAttribute('class', 'game-buttons lock');
   }
 
-  /* Unlock buttons when another round is ready.
+  /* Unlock buttons when a game is in progress.
    * @return {void}
    */
   unlockButtons() {
@@ -74,7 +74,7 @@ class GameButtons {
     this.$container.setAttribute('class', 'game-buttons');
   }
 
-  /* Create a button
+  /* Create a button and add a click event if a player is selected
    * @return {object}
    */
   createButton(string, index) {

@@ -13,7 +13,7 @@ class Player {
    */
   constructor(handSigns, player, playerType, ele, settings) {
 
-    /* a list of handSigns example: ['rock', 'paper', 'scissors']
+    /* a list of handSigns. example: ['rock', 'paper', 'scissors']
      * @array
      */
     this.handSigns = handSigns;

@@ -14,7 +14,7 @@ class GameView {
    * @param: {object} ele - DOMElement
    */
   constructor(ele) {
-    /* A reference to an element
+    /* A reference to hand-game element
      * @object
      */
     this.$ele = ele;
@@ -73,20 +73,23 @@ class GameView {
   }
 
 
-  /* This method is triggered from the "GameController" to get the player outcomes
+  /* This method is triggered from the "GameController" to get the player hand sign
    * @return {void}
    */
-  getOutcomeFromPlayers() {
-    /* Get outcome form player 1
+  getHandSignFromPlayers() {
+    /* Get hand sign form player 1
      * @string
      */
     let p1 = this.player1.getHandSign();
 
-    /* Get outcome form player 2
+    /* Get hand sign form player 2
      * @string
      */
     let p2 = this.player2.getHandSign();
 
+    /* ## GameController()
+     * 
+     */
     this.gameController.winner(p1, p2);
   }
 

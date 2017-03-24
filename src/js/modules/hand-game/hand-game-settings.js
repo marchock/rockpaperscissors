@@ -27,16 +27,16 @@ class HandGameSettings {
      */
     game_type.set(this, 'default');
 
-     /* Set a number of attempts to win a game 1, 3, 5
-      * @param {object} this
-      * @param {number} 1
-      */
+    /* Set a number of attempts to win a game 1, 3, 5
+     * @param {object} this
+     * @param {number} 1
+     */
     best_of.set(this, 1);
 
-     /* Set an opponent the computer should face. "player" or "computer"
-      * @param {object} this
-      * @param {string} 'player'
-      */
+    /* Set an opponent the computer should face. "player" or "computer"
+     * @param {object} this
+     * @param {string} 'player'
+     */
     verses.set(this, 'player');
   }
 

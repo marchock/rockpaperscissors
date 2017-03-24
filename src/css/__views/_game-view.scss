@@ -109,10 +109,10 @@
         background-color: #CCC;
         display: inline-block;
         margin: 5px 0 0 5px;
-        transition: all 0.4s linear;
-        -webkit-transform: scale(0.9);
-            -ms-transform: scale(0.9);
-                transform: scale(0.9);
+        transition: all 0.2s ease-in-out;
+        -webkit-transform: scale(0.6);
+            -ms-transform: scale(0.6);
+                transform: scale(0.6);
         -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

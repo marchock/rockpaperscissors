@@ -9,7 +9,7 @@ class HandGame {
   /* Create a hand game
    */
   constructor() {
-    /* A reference to an element
+    /* A reference to an hand-game element
      * @object
      */
     this.$ele = this.getElementHandGame('hand-game');
@@ -41,11 +41,15 @@ class HandGame {
     this.gameView.loadView(this);
   }
 
+  /* Return a DOM element
+   * @param {string} id
+   * @return {object}
+   */
   getElementHandGame(id) {
     if (document.getElementById(id)) {
       return document.getElementById(id);
     } else {
-      // this is for testing
+      // Testing requires a element to be created and returned
       let div = document.createElement('div');
       div.setAttribute('id', id);
       return div;

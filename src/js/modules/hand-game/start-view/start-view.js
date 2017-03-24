@@ -52,15 +52,18 @@ class StartView {
     form.addEventListener('submit', (evt) => {
       evt.preventDefault();
 
+      // Get all radio inputs
       let inputs = this.$ele.querySelectorAll('input');
+      // Add all checked inputs to array
       let checked = [];
 
+      // Search for radio inputs checked
       Array.from(inputs).forEach(function (input) {
         if (input.checked) {
+          // Add checked input to array
           checked.push(input)
         }
       });
-
       this.updateSettings(checked);
     })
   }

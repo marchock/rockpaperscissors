@@ -176,7 +176,7 @@ class GameController {
         // Disable game buttons
         this.disableGameButtons();
 
-        this._gameView.getOutcomeFromPlayers();
+        this._gameView.getHandSignFromPlayers();
       }
     }, 1000);
   }
