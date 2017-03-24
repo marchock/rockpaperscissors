@@ -15,6 +15,8 @@
   */
  $tablet-width: 768px;
  $desktop-width: 1024px;
+ $lg-desktop-width: 1280px;
+ $xlg-desktop-width: 1440px;
 
  @mixin tablet {
    @media (min-width: #{$tablet-width}) {
@@ -24,6 +26,18 @@
 
  @mixin desktop {
    @media (min-width: #{$desktop-width}) {
+     @content;
+   }
+ }
+
+ @mixin lg-desktop {
+   @media (min-width: #{$lg-desktop-width}) {
+     @content;
+   }
+ }
+
+ @mixin xlg-desktop {
+   @media (min-width: #{$xlg-desktop-width}) {
      @content;
    }
  }
