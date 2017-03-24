@@ -42,6 +42,22 @@ class StartView {
     this.$ele.innerHTML = this.html;
 
     this.setupFormEvent();
+    this.updateForm();
+  }
+
+  /* Get settings and apply to form
+   * @return void
+   */
+  updateForm() {
+    let inputs = this.$ele.querySelectorAll('input');
+
+    Array.from(inputs).forEach(function (input) {
+
+      input.checked = false;
+      if (settings.getGameType() === input.value) input.checked = true;
+      if (settings.getVerses() === input.value) input.checked = true;
+      if (settings.getBestOf() === Number(input.value)) input.checked = true;
+    });
   }
 
   /* Setup form submit event to update game settings
