@@ -8,8 +8,6 @@ describe('HandGame - StartView', () => {
   startView.html = html;
   startView.loadView({});
 
-  console.log(startView.$ele.querySelectorAll('input'))
-
   it('should exist', () => {
     expect(StartView).to.exist;
 	});

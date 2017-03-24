@@ -69,7 +69,7 @@ describe('HandGame - GameView - Player', () => {
   });
 
   describe('# player.getHandSign()', () => {
-    it('should return a random handsign type "String"', () => {
+    it('should return a random handsign. Type "String"', () => {
       expect(player.getHandSign()).to.be.a('string');
     });
 
