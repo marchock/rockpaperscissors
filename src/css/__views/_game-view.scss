@@ -1,0 +1,215 @@
+.game-view {
+
+  .quit-button {
+    background-color: #ff6868;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    &:hover {
+      background-color: #f74f4f;
+    }
+
+    p {
+      padding: 20px;
+      @include font(18, 18);
+      font-weight: bold;
+      color: #fff;
+
+      &:nth-child(1) {
+        display: none;
+      }
+
+      @include tablet {
+        &:nth-child(1) {
+          display: block;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .game-counter {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    @include desktop {
+      top: 28%;
+      left: 50%;
+      width: 200px;
+      margin-left: -100px;
+    }
+
+    > h3 {
+      -webkit-animation: POP-ANIMATION 0.5s forwards; /* Safari 4+ */
+      -moz-animation:    POP-ANIMATION 0.5s forwards; /* Fx 5+ */
+      -o-animation:      POP-ANIMATION 0.5s forwards; /* Opera 12+ */
+      animation:         POP-ANIMATION 0.5s forwards; /* IE 10+, Fx 29+ */
+    }
+  }
+
+  .hand-sign {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    border: solid 1px #a2a2a2;
+    top: 30%;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    &.player1 {
+      left: 5%;
+    }
+
+    &.player2 {
+      right: 5%;
+    }
+
+    @include desktop {
+      width: 20%;
+      height: 40%;
+      top: 20%;
+
+      &.player1 {
+        left: 20%;
+      }
+
+      &.player2 {
+        right: 20%;
+      }
+    };
+
+    .score {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      span {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: #CCC;
+        display: inline-block;
+        margin: 5px 0 0 5px;
+        transition: all 0.4s linear;
+        -webkit-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+                transform: scale(0.9);
+        -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+        &.highlight {
+          background-color: #ffcb6a;
+          -webkit-transform: scale(1);
+              -ms-transform: scale(1);
+                  transform: scale(1);
+        }
+      }
+    }
+
+    .player-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+      background-color: rgba(0,0,0,0.6);
+
+      span {
+        padding: 5% 0;
+        display: block;
+        color: #fff;
+      }
+    }
+  }
+
+  .game-buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    //opacity: 1;
+    transition: all 0.4s linear;
+
+    &.lock {
+      opacity: 0.3;
+      p {
+        &:hover {
+          background-color: #aac2e0;
+          color: inherit;
+        }
+      }
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    span {
+      display: none;
+    }
+
+    @include tablet {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      span {
+        position: relative;
+        top: -6px;
+        margin-left: 5px;
+        display: inline-block;
+      }
+    }
+
+    @include desktop {
+      bottom: 10%;
+    }
+
+    > div {
+      width: 33.3%;
+      height: 100%;
+      float: left;
+    }
+
+    p {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #aac2e0;
+      text-align: center;
+      height: 100%;
+      padding: 10% 0;
+      @include font(18, 18);
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+      &:hover {
+        background-color: #4D575B;
+        color: #fff;
+      }
+
+      @include tablet {
+        padding: 5% 0;
+      }
+    }
+  }
+}

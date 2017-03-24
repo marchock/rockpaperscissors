@@ -7,32 +7,21 @@
 
 
 /* Keyframes */
-@keyframes slideUp {
-    0% {
-        transform: max-height 0.3s ease-out;
-        opacity: 1;
-    }
-    100% {
-        transform: max-height 0.3s ease-out;
-        max-height: 0;
-        opacity: 0;
-    }
+@-webkit-keyframes POP-ANIMATION {
+  0%, 10%   { opacity: 0; }
+  100% { opacity: 1; }
 }
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@-moz-keyframes POP-ANIMATION {
+  0%, 10%   { opacity: 0; }
+  100% { opacity: 1; }
 }
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+@-o-keyframes POP-ANIMATION {
+  0%, 10%    { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes POP-ANIMATION {
+  0%, 10% { transform: scale(0); }
+  80%   { transform: scale(1.1); }
+  90%   { transform: scale(0.9); }
+  100% { transform: scale(1); }
 }

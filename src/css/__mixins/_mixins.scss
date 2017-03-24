@@ -4,7 +4,15 @@
  */
 
 
-
+ /**
+  * Media queries
+  *
+  * @example
+  *     @include tablet {}
+  *
+  * @example
+  *     @include desktop {}
+  */
  $tablet-width: 768px;
  $desktop-width: 1024px;
 
@@ -19,10 +27,6 @@
      @content;
    }
  }
-
-
-
-
 
 
 /**

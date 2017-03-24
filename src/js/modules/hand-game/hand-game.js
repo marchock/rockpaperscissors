@@ -9,7 +9,7 @@ class HandGame {
   /* Create a hand game
    */
   constructor() {
-    /* A DOM reference to #hand-game
+    /* A reference to an element
      * @object
      */
     this.$ele = this.getElementHandGame('hand-game');
