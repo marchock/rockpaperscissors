@@ -54,6 +54,10 @@
     }
 
     > h3 {
+      &::first-letter {
+         text-transform:uppercase;
+      }
+
       -webkit-animation: POP-ANIMATION 0.5s forwards; /* Safari 4+ */
       -moz-animation:    POP-ANIMATION 0.5s forwards; /* Fx 5+ */
       -o-animation:      POP-ANIMATION 0.5s forwards; /* Opera 12+ */
@@ -167,6 +171,9 @@
         padding: 5% 0;
         display: block;
         color: #fff;
+        &::first-letter {
+           text-transform:uppercase;
+        }
       }
     }
   }
@@ -196,6 +203,9 @@
 
     span {
       display: none;
+      &::first-letter {
+         text-transform:uppercase;
+      }
     }
 
     @include tablet {
