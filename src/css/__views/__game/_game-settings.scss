@@ -1,18 +1,38 @@
-.start-view {
-  position: relative;
+.game-settings {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 600px;
-  background-color: #f5f5f5;
-  margin: 0 auto;
-  text-align: center;
-  display: table;
-  overflow: auto;
-  -webkit-animation: FADE-IN 1s forwards; /* Safari 4+ */
-  -moz-animation:    FADE-IN 1s forwards; /* Fx 5+ */
-  -o-animation:      FADE-IN 1s forwards; /* Opera 12+ */
-  animation:         FADE-IN 1s forwards; /* IE 10+, Fx 29+ */
+  height: 100%;
+  transition: all 0.4s ease-out;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2;
+
+  &.show {
+    background-color: rgba(0, 0, 0, 0.4);
+
+    form {
+      top: 0%;
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  form {
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    text-align: center;
+    display: table;
+    overflow: auto;
+    transition: all 0.4s ease-out;
+  }
 
   h3 {
     background-color: #fff;

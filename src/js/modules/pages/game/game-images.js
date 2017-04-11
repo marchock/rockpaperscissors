@@ -1,4 +1,4 @@
-const icons = {
+const gameImages = {
   rock: 'https://d30y9cdsu7xlg0.cloudfront.net/png/88661-200.png',
   paper: 'https://d30y9cdsu7xlg0.cloudfront.net/png/88662-200.png',
   scissors: 'https://d30y9cdsu7xlg0.cloudfront.net/png/88666-200.png',
@@ -7,4 +7,4 @@ const icons = {
   winner: 'https://www.safetyrevolution.co.uk/wp-content/uploads/2014/12/Safety-Competition-Winner.jpg'
 }
 
-export default icons;
+export default gameImages;
