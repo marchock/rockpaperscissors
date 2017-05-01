@@ -20,7 +20,7 @@ export const getHandSigns = (gameType) => {
  * @return: array
  */
 export const getRandomHandSign = (settings) => {
-  const handSigns = getHandSigns(settings.settings.gameType);
+  const handSigns = getHandSigns(settings.gameType);
   return handSigns[getRandomNumber(handSigns.length)];
 }
 

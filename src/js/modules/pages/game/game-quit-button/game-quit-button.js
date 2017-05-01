@@ -1,5 +1,6 @@
 import GameTemplate from '../game-template';
 import html from './game-quit-button.html';
+import {store} from '../../../components/dataStore/dataStore';
 
 class GameQuitButton extends GameTemplate {
 
@@ -23,6 +24,7 @@ class GameQuitButton extends GameTemplate {
   setupQuitButton(ele) {
     ele.addEventListener('click', (function() {
       this._game.reset();
+      store.reset();
     }).bind(this), false);
   }
 }

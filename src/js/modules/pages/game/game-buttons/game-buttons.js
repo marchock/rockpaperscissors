@@ -1,7 +1,7 @@
 import GameTemplate from '../game-template';
-import { getHandSigns } from '../game-data';
 import gameImages from '../game-images';
-//import icons from './icons';
+import {store} from '../../../components/dataStore/dataStore';
+import * as _ from 'lodash';
 
 /* Create game buttons for a user to select a hand sign
  * @Class
@@ -20,20 +20,31 @@ class GameButtons extends GameTemplate {
     });
 
     this.player2 = player2;
+    this.handSigns = null;
+
+    store.game$.subscribe(this);
   }
 
   /* Create GameButtons
    * @param: {object} settings - { gameType, opponent }
    */
-  init({ gameType, opponent }) {
+  next(data) {
+
+    if (data === undefined || _.isEqual(data.handSigns, this.handSign)) return;
+
+    this.handSign = data.handSigns;
+
+    if (this.handSign.length < 1) {
+      return;
+    }
+
     this.removeButtons();
-    this.disableAllButtons = opponent === 'computer' ? true : false;
+
+    this.disableAllButtons = data.settings.opponent === 'computer' ? true : false;
     this.disable(this.disableAllButtons);
 
-    this.handSigns = getHandSigns(gameType);
-
-    for (let handSign of this.handSigns) {
-      let element = this.createButton(handSign, this.handSigns.length);
+    for (let handSign of this.handSign) {
+      let element = this.createButton(handSign, this.handSign.length);
       this.$ele.appendChild(element);
     }
   }
@@ -59,6 +70,7 @@ class GameButtons extends GameTemplate {
   reset() {
     this.removeButtons();
     this.disable(false);
+    //this.handSigns = null;
   }
 
   /* Creates a button element and registers a click event
@@ -81,7 +93,9 @@ class GameButtons extends GameTemplate {
         // block click if buttons disabled
         if (this.disableAllButtons) return;
         // Player method registered to every game button
-        this.player2.handsign.update(handSign);
+        //this.player2.handsign.update(handSign);
+
+        store.updatePlayer('player2', { handSign });
       }).bind(this), false);
     }
     return div;

@@ -1,5 +1,7 @@
 import GameTemplate from '../game-template';
 import Count from './game-count';
+import { store } from '../../../components/dataStore/dataStore';
+import * as _ from 'lodash';
 
 
 /* Create game buttons to select hand signs
@@ -17,7 +19,9 @@ class GamePopUpText extends GameTemplate {
       className: 'game-popup-text'
     });
 
+    this.point = {};
     this.count = new Count();
+    store.game$.subscribe(this);
   }
 
   /* Count
@@ -27,6 +31,19 @@ class GamePopUpText extends GameTemplate {
     let count = this.count.next().value;
     this.update(count);
     return count;
+  }
+
+  next(data) {
+
+
+
+
+    if (data === undefined || _.isEqual(data.point, this.point)) return;
+
+    console.log(data.point);
+
+    this.point = data.point;
+    this.update(this.point.message)
   }
 
   /* Remove all child elements
@@ -51,6 +68,7 @@ class GamePopUpText extends GameTemplate {
   reset() {
     this.clear();
     this.count.next(true);
+    this.point = {};
   }
 }
 

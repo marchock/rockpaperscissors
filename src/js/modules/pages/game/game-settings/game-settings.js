@@ -1,6 +1,7 @@
 
 import GameTemplate from '../game-template';
 import html from './game-settings.html';
+import {store} from '../../../components/dataStore/dataStore';
 
 class GameSettings extends GameTemplate {
 
@@ -19,6 +20,9 @@ class GameSettings extends GameTemplate {
       opponent: 'player',
       bestOf: 1
     }
+
+    store.initializeSettings(this.settings);
+
 
     this.updateForm();
     this.setupFormEvent();
@@ -71,6 +75,7 @@ class GameSettings extends GameTemplate {
       opponent,
       bestOf
     }
+    store.initializeSettings(this.settings);
     this.hideForm();
   }
 

@@ -1,21 +1,28 @@
-import { getRandomHandSign } from '../game-data';
 import gameImages from '../game-images';
-
+import { store } from '../../../components/dataStore/dataStore';
 
 class GamePlayerHandsign {
 
-  constructor(ele) {
+  constructor(ele, isPlayer1) {
     this.$ele = ele;
     this.handsign = '';
+    this.player =  isPlayer1 ? 'player1' : 'player2';
+    store.game$.subscribe(this);
+  }
+
+  next(data) {
+    if (data === undefined || data[this.player].handSign === this.handSign) return;
+
+    this.handSign = data[this.player].handSign;
+    if (this.handSign === '') {
+      this.clear();
+    } else {
+      this.update(this.handSign);
+    }
   }
 
   init(player) {
     this.nameOfPlayer = player;
-  }
-
-  isAWinner() {
-    this.$ele.style.backgroundSize = '60%';
-    this.update('winner');
   }
 
   update(outcome) {
@@ -26,22 +33,6 @@ class GamePlayerHandsign {
   clear() {
     this.handsign = '';
     this.$ele.style.backgroundImage = '';
-  }
-
-  get(settings) {
-    return this[this.nameOfPlayer](settings);
-  }
-
-  computer(settings) {
-    let handsign = getRandomHandSign(settings);
-    this.update(handsign);
-    return handsign;
-  }
-
-  player() {
-    let handsign = this.handsign;
-    this.handsign = '';
-    return handsign;
   }
 
   reset() {
