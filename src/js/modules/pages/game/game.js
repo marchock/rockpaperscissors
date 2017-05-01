@@ -23,9 +23,7 @@ class Game {
   }
 
 
-  start(settings) {
-    this.player1.init(settings);
-    this.player2.init(settings);
+  start() {
     this.timer();
   }
 

@@ -4,8 +4,6 @@ import GamePlayerScoreboard from './game-player-scoreboard';
 import GamePlayerName from './game-player-name';
 import GamePlayerHandsign from './game-player-handsign';
 
-import { store } from '../../../components/dataStore/dataStore';
-
 class GamePlayer extends GameTemplate {
 
   constructor(ele) {
@@ -19,33 +17,6 @@ class GamePlayer extends GameTemplate {
     this.scoreboard = new GamePlayerScoreboard(this.$ele, isPlayer1);
     this.name = new GamePlayerName(this.$ele);
     this.handsign = new GamePlayerHandsign(this.$ele, isPlayer1);
-    store.game$.subscribe(this);
-  }
-
-  next() {
-
-  }
-
-  init() {
-    //this.scoreboard.create();
-    this.handsign.init(this.name.player);
-  }
-
-  isAWinner() {
-    return this.scoreboard.checkScore();
-  }
-
-  pointWon() {
-    this.scoreboard.update(() => {
-      this.winner();
-    });
-  }
-
-  winner() {
-    setTimeout(() => {
-      this.handsign.isAWinner();
-      this.name.isAWinner();
-    }, 2000);
   }
 
   reset() {

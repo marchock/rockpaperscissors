@@ -21,10 +21,6 @@ class GamePlayerHandsign {
     }
   }
 
-  init(player) {
-    this.nameOfPlayer = player;
-  }
-
   update(outcome) {
     this.handsign = outcome;
     this.$ele.style.backgroundImage = `url('${gameImages[outcome]}')`;

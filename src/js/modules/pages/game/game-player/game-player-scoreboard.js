@@ -45,10 +45,6 @@ class GamePlayerScoreboard extends GameTemplate {
     }
   }
 
-  checkScore() {
-    return this.maximumGamePoints <= this.score;
-  }
-
   /* Updates a player's scoreboard
    * @param {number} num
    * @return {void}

@@ -26,10 +26,6 @@ class GamePlayerName extends GameTemplate {
     this.$ele.innerHTML = `<span>${this.player.name}</span>`;
   }
 
-  isAWinner() {
-    this.update(`${this.player.name} wins!!!`);
-  }
-
   reset() {
     this.$ele.innerHTML = '';
     this.player = '';

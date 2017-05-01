@@ -34,14 +34,7 @@ class GamePopUpText extends GameTemplate {
   }
 
   next(data) {
-
-
-
-
     if (data === undefined || _.isEqual(data.point, this.point)) return;
-
-    console.log(data.point);
-
     this.point = data.point;
     this.update(this.point.message)
   }
